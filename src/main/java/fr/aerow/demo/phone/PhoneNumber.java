@@ -1,6 +1,10 @@
 package fr.aerow.demo.phone;
 
 public class PhoneNumber {
+	
+	public final static int AERA_CODE_LENGTH = 3;
+	public final static int LOCAL_LENGTH = 3;
+	
 	private String phone;
 	private String aeraCode;
 	private String local3;
@@ -12,7 +16,7 @@ public class PhoneNumber {
 	}
 
 	public void setLocal3(String local3) throws PhoneFormatException {
-		if (local3.length() != 3) {
+		if (local3.length() != LOCAL_LENGTH) {
 			throw new PhoneFormatException("Invalid local set of digits");
 		}
 		this.local3 = local3;
@@ -23,7 +27,7 @@ public class PhoneNumber {
 	}
 
 	public void setAeraCode(String aeraCode) throws PhoneFormatException {
-		if (aeraCode.length() != 3) {
+		if (aeraCode.length() != AERA_CODE_LENGTH) {
 			throw new PhoneFormatException("Invalid aera code");
 		}
 		this.aeraCode = aeraCode;
